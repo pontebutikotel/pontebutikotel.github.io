@@ -25,6 +25,7 @@ html{
 body{
     background: var(--bg-color);
     color: var(--text-color);
+    margin-top: 60px; /* .header yüksekliği ile aynı olmalı */
 }
 
 .header{
@@ -35,10 +36,8 @@ body{
     padding: 2rem 9%;
     background: transparent;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    z-index: 100;
-    transition: top 0.3s ease;
+    height: 60px; /* Yüksekliği ihtiyaca göre ayarlayın */
 }
 .header.hide {
     top: -100px; /* Yukarı kaydırarak gizler */
@@ -56,6 +55,11 @@ body{
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
+    color: #222;
+    font-size: 2rem;
+    text-decoration: none;
+    margin-left: 24px;
+    font-weight: bold;
 }
 
 .navbar{
