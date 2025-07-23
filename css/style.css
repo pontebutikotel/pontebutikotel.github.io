@@ -25,7 +25,6 @@ html{
 body{
     background: var(--bg-color);
     color: var(--text-color);
-    margin-top: 60px; /* .header yüksekliğine göre ayarlayın */
 }
 
 .header{
@@ -33,13 +32,12 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 100;
     padding: 2rem 9%;
-    background: #fff; /* Arka plan rengi, isteğe göre değiştirin */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Hafif gölge */
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 100;
     transition: top 0.3s ease;
 }
 .header.hide {
