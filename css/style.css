@@ -34,8 +34,11 @@ body{
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: inherit; /* Arka planı mevcut haliyle bırakır */
-    /* Eğer arka plan şeffafsa ve sorun olursa: background: #fff; kullanabilirsiniz */
+    background: #fff; /* Arka plan rengi, gerekirse değiştirin */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    height: 60px; /* Yüksekliği ihtiyaca göre ayarlayın */
 }
 
 .header.hide {
