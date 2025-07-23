@@ -29,21 +29,14 @@ body{
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white; /* veya arka plan neyse */
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* isteğe bağlı gölge */
-}
-
-.header.hide {
-    top: -100px; /* Yukarı kaydırarak gizler */
-    position: fixed;
-    width: 100%;
-    z-index: 10;
+    position: fixed;       /* Sayfada sabit tutar */
+    top: 0;                /* Yukarıya yapıştırır */
+    left: 0;               /* Sola yaslar */
+    width: 100%;           /* Tam genişlik */
+    z-index: 1000;         /* Üstte görünmesini sağlar */
+    background-color: white; /* Arka plan (şeffaf olursa alt içerik görünür) */
+    padding: 1.5rem 2rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
 }
 
 .header.sticky{
