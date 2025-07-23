@@ -33,12 +33,11 @@ body{
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
-    background: transparent;
-    display: flex;
-    align-items: center;
-    height: 60px; /* Yüksekliği ihtiyaca göre ayarlayın */
+    z-index: 1000;
+    background: inherit; /* Arka planı mevcut haliyle bırakır */
+    /* Eğer arka plan şeffafsa ve sorun olursa: background: #fff; kullanabilirsiniz */
 }
+
 .header.hide {
     top: -100px; /* Yukarı kaydırarak gizler */
     position: fixed;
