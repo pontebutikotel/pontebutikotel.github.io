@@ -6,102 +6,133 @@
     <title>Menu</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- Google Translate Script -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'tr', includedLanguages: 'en,ar', layout: google.translate.TranslateElement.InlineLayout.SIMPLE},
+                'google_translate_element'
+            );
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Çeviri butonu için stil */
+        #google_translate_element {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        /* Çeviri menüsünün görünümünü iyileştirme */
+        .goog-te-gadget {
+            color: transparent !important;
+        }
+        .goog-te-gadget .goog-te-combo {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background: white;
+            font-family: 'Montserrat', sans-serif;
+        }
+        /* Başlık için boşluk bırak */
+        .header {
+            position: relative;
+            padding-top: 50px;
+        }
+    </style>
 </head>
 <body>
+    <div id="google_translate_element"></div>
+    
     <header class="header">
         <a href="index.html" class="logo">Ponte Cafe</a>
     </header>
+    
     <!-- Menüdeki kartlar -->
     <section class="card" id="card">
         <div class="card-container">
             <!-- kahvaltı -->           
             <div class="card-box brew-bar">
-                
-                <a href="kahvalti.html"> <!-- Yönlendirme linki -->                    
+                <a href="kahvalti.html">                    
                     <img src="images/kahvaltiana.jpg" alt="">
                     <h4 class="bottom-left">Kahvaltılar</h4> 
                 </a>
             </div>
             <!-- Izgaralar -->
             <div class="card-box coctails">
-                
-                <a href="izgaralar.html"> <!-- Yönlendirme linki -->                    
+                <a href="izgaralar.html">                    
                     <img src="images/yemek1.jpg" alt="">
                     <h4 class="bottom-left">Izgaralar</h4> 
                 </a>
             </div>
+            <!-- Diğer menü öğeleri aynı şekilde devam eder... -->
             <!-- Soğuk İçecekler -->            
             <div class="card-box smoothies">
-                <a href="sogukicecekler.html"> <!-- Yönlendirme linki -->                    
+                <a href="sogukicecekler.html">                    
                     <img src="images/smoothie3.jpg" alt="">
                     <h4 class="bottom-left">Soğuk İçecekler</h4> 
                 </a>
             </div>
             <!-- Sıcak İçecekler -->
             <div class="card-box sicak-icecekler">                 
-                <a href="sicakicecekler.html"> <!-- Yönlendirme linki -->
+                <a href="sicakicecekler.html">
                     <img src="images/hot1.jpg" alt="">
                     <h4 class="bottom-left">Sıcak İçecekler</h4>                   
                 </a>
             </div>
             <!-- Tatlılar -->             
             <div class="card-box tatlilar">                
-                <a href="tatlilar.html"> <!-- Yönlendirme linki -->                    
+                <a href="tatlilar.html">                    
                     <img src="images/tatlı1.jpg" alt="">
                     <h4 class="bottom-left">Tatlılar</h4> 
                 </a>
             </div>
             <!-- Salatalar -->
             <div class="card-box herbal-teas">                
-                <a href="salatalar.html"> <!-- Yönlendirme linki -->                    
+                <a href="salatalar.html">                    
                     <img src="images/salata.png" alt="">
                     <h4 class="bottom-left">Salatalar</h4> 
                 </a>
             </div>
             <!-- Ara Sıcaklar -->
             <div class="card-box coctails">
-                
-                <a href="arasicaklar.html"> <!-- Yönlendirme linki -->                    
+                <a href="arasicaklar.html">                    
                     <img src="images/patates.png" alt="">
                     <h4 class="bottom-left">Ara Sıcaklar</h4> 
                 </a>
             </div>
             <!-- Hamburgerler -->
             <div class="card-box coctails">
-                
-                <a href="hamburgerler.html"> <!-- Yönlendirme linki -->                    
+                <a href="hamburgerler.html">                    
                     <img src="images/burger.jpg" alt="">
                     <h4 class="bottom-left">Hamburgerler</h4> 
                 </a>
             </div>
             <!-- Sıcak Kahveler -->
             <div class="card-box coctails">
-                
-                <a href="sicakkahveler.html"> <!-- Yönlendirme linki -->                    
+                <a href="sicakkahveler.html">                    
                     <img src="images/sicakkahveler.jpg" alt="">
                     <h4 class="bottom-left">Sıcak Kahveler</h4> 
                 </a>
             </div>
             <!-- Soğuk Kahveler -->
             <div class="card-box coctails">
-                
-                <a href="sogukkahveler.html"> <!-- Yönlendirme linki -->                    
+                <a href="sogukkahveler.html">                    
                     <img src="images/sogukkahveler.jpg" alt="">
                     <h4 class="bottom-left">Soğuk Kahveler</h4> 
                 </a>
             </div>
             <!-- Dondurma -->
             <div class="card-box coctails">
-                
-                <a href="dondurma.html"> <!-- Yönlendirme linki -->                    
+                <a href="dondurma.html">                    
                     <img src="images/dondurma.webp" alt="">
                     <h4 class="bottom-left">Dondurma</h4> 
                 </a>
             </div>
             <!-- Frozen -->
             <div class="card-box coctails">
-                
-                <a href="frozen.html"> <!-- Yönlendirme linki -->                    
+                <a href="frozen.html">                    
                     <img src="images/frozen.webp" alt="">
                     <h4 class="bottom-left">Frozen</h4> 
                 </a>
