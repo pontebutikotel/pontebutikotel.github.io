@@ -4,101 +4,182 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ponte Otel</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@500&display=swap" rel="stylesheet" />
   <style>
+    :root {
+      --light: #e9e5d6;
+      --medium: #b5b8a3;
+      --dark: #6b8c42;
+      --text: #333;
+      --bg: #f8f8f8;
+    }
+    
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #f5f5f5;
-      color: #333;
-      line-height: 1.6;
-      text-align: center; /* Tüm metinleri ortala */
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
 
     header {
-      background: linear-gradient(135deg, #e9e5d6 0%, #b5b8a3 50%, #6b8c42 100%);
-      color: #333;
-      padding: 60px 20px;
+      background: linear-gradient(135deg, var(--light) 0%, var(--medium) 50%, var(--dark) 100%);
+      color: var(--text);
+      padding: 80px 20px 100px;
       text-align: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: -50px;
+      left: 0;
+      right: 0;
+      height: 100px;
+      background: var(--bg);
+      transform: skewY(-3deg);
+      z-index: 1;
     }
 
     header h1 {
-      margin-bottom: 10px;
-      font-size: 48px;
-      text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 500;
+      position: relative;
+      z-index: 2;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
 
     header p {
-      font-size: 18px;
-      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 300;
+      max-width: 600px;
+      margin: 15px auto 0;
+      position: relative;
+      z-index: 2;
     }
 
     .container {
-      max-width: 1000px;
-      margin: 40px auto;
+      max-width: 1100px;
+      margin: -40px auto 60px;
       padding: 0 20px;
+      position: relative;
+      z-index: 3;
     }
 
-    .section {
-      margin-bottom: 60px;
-      text-align: center; /* Bölüm içeriğini ortala */
+    .card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+      padding: 40px;
+      margin-bottom: 40px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .section h2 {
-      font-size: 28px;
-      margin-bottom: 25px;
-      color: #6b8c42;
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 30px;
       position: relative;
       display: inline-block;
     }
 
-    .section h2:after {
+    .section-title::after {
       content: '';
       position: absolute;
       bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
+      left: 0;
+      width: 50px;
       height: 3px;
-      background: #6b8c42;
+      background: var(--medium);
     }
 
-    .section ul {
-      list-style-type: none; /* Madde işaretlerini kaldır */
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+      list-style: none;
       padding: 0;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
-    .section ul li {
-      margin-bottom: 20px;
-      padding: 15px;
-      background: rgba(255,255,255,0.8);
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    .feature-item {
+      background: rgba(255,255,255,0.9);
+      border-left: 4px solid var(--dark);
+      padding: 25px;
+      border-radius: 0 8px 8px 0;
+      text-align: left;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       position: relative;
+      overflow: hidden;
+    }
+
+    .feature-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--dark);
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: white;
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      min-width: 250px;
       text-align: center;
     }
 
-    .section ul li:before {
-      content: "•";
-      color: #6b8c42;
-      font-size: 24px;
-      position: absolute;
-      left: -25px;
-      top: 50%;
-      transform: translateY(-50%);
+    .contact-card i {
+      font-size: 2rem;
+      color: var(--dark);
+      margin-bottom: 15px;
+      display: inline-block;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background-color: #ddd;
-      color: #444;
-      font-size: 14px;
+      padding: 40px 20px;
+      background: linear-gradient(135deg, var(--light) 0%, var(--medium) 50%, var(--dark) 100%);
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5rem;
+      }
+      
+      .card {
+        padding: 30px 20px;
+      }
+      
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
 
@@ -109,44 +190,56 @@
 
   <div class="container">
 
-    <div class="section">
-      <h2>Genel Bilgiler</h2>
-      <ul>
-        <li>Ponte Otel, modern tasarımı, merkezi konumu ve güler yüzlü hizmetiyle misafirlerine benzersiz bir konaklama deneyimi sunar.</li>
-        <li>Tesisimizde 24 saat resepsiyon, ücretsiz Wi-Fi, açık büfe kahvaltı ve daha fazlası sizi bekliyor.</li>
+    <div class="card">
+      <h2 class="section-title">Genel Bilgiler</h2>
+      <ul class="feature-list">
+        <li class="feature-item">Modern tasarımı ve merkezi konumuyla Ponte Otel, misafirlerine benzersiz bir konaklama deneyimi sunar.</li>
+        <li class="feature-item">24 saat açık resepsiyon, ücretsiz Wi-Fi ve açık büfe kahvaltı ile konforunuz için her detay düşünüldü.</li>
       </ul>
     </div>
 
-    <div class="section">
-      <h2>Odaya Giriş Yönergeleri</h2>
-      <ul>
-        <li>Check-in saati: 14:00 – Resepsiyonda kimliğinizi ibraz edin.</li>
-        <li>Oda kartınızı aldıktan sonra asansörle katınıza çıkabilirsiniz.</li>
-        <li>Kapı kilidi manyetik kart sistemlidir. Kartı sensöre okutarak kapıyı açabilirsiniz.</li>
-        <li>Oda içindeki klima, TV ve minibar kullanım bilgileri masanın üstündeki bilgilendirme dosyasında yer almaktadır.</li>
-        <li>Herhangi bir sorun yaşarsanız 0'ı tuşlayarak resepsiyona ulaşabilirsiniz.</li>
+    <div class="card">
+      <h2 class="section-title">Odaya Giriş Yönergeleri</h2>
+      <ul class="feature-list">
+        <li class="feature-item">Check-in saati: 14:00 – Resepsiyonda kimliğinizi ibraz edin.</li>
+        <li class="feature-item">Oda kartınızı aldıktan sonra asansörle katınıza çıkabilirsiniz.</li>
+        <li class="feature-item">Kapı kilidi manyetik kart sistemlidir. Kartı sensöre okutarak kapıyı açabilirsiniz.</li>
+        <li class="feature-item">Oda içindeki klima, TV ve minibar kullanım bilgileri masanın üstündeki bilgilendirme dosyasında yer almaktadır.</li>
+        <li class="feature-item">Herhangi bir sorun yaşarsanız 0'ı tuşlayarak resepsiyona ulaşabilirsiniz.</li>
       </ul>
     </div>
 
-    <div class="section">
-      <h2>Sunulan Hizmetler</h2>
-      <ul>
-        <li>Açık büfe kahvaltı (07:00 - 10:30)</li>
-        <li>Ücretsiz Wi-Fi tüm alanlarda</li>
-        <li>Spa & Sauna</li>
-        <li>Çamaşırhane hizmeti</li>
-        <li>Vale ve otopark</li>
-        <li>İsteğe bağlı oda servisi</li>
+    <div class="card">
+      <h2 class="section-title">Sunulan Hizmetler</h2>
+      <ul class="feature-list">
+        <li class="feature-item">Açık büfe kahvaltı (07:00 - 10:30)</li>
+        <li class="feature-item">Ücretsiz Wi-Fi tüm alanlarda</li>
+        <li class="feature-item">Spa & Sauna</li>
+        <li class="feature-item">Çamaşırhane hizmeti</li>
+        <li class="feature-item">Vale ve otopark</li>
+        <li class="feature-item">İsteğe bağlı oda servisi</li>
       </ul>
     </div>
 
-    <div class="section">
-      <h2>İletişim & Konum</h2>
-      <ul>
-        <li><strong>Adres:</strong> Atatürk Bulvarı No:123, Kadıköy, İstanbul</li>
-        <li><strong>Telefon:</strong> +90 212 000 00 00</li>
-        <li><strong>E-posta:</strong> info@ponteotel.com</li>
-      </ul>
+    <div class="card">
+      <h2 class="section-title">İletişim & Konum</h2>
+      <div class="contact-info">
+        <div class="contact-card">
+          <i class="fas fa-map-marker-alt"></i>
+          <h3>Adres</h3>
+          <p>Atatürk Bulvarı No:123<br>Kadıköy, İstanbul</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-phone"></i>
+          <h3>Telefon</h3>
+          <p>+90 212 000 00 00</p>
+        </div>
+        <div class="contact-card">
+          <i class="fas fa-envelope"></i>
+          <h3>E-posta</h3>
+          <p>info@ponteotel.com</p>
+        </div>
+      </div>
     </div>
 
   </div>
