@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ponte Giriş</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
     :root {
       --primary: #2a5a3c; /* Karadeniz yeşili */
@@ -22,7 +23,7 @@
       font-family: 'Montserrat', sans-serif;
       background: 
         linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
-        url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+        url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -65,6 +66,13 @@
       font-weight: 500;
       text-decoration: none;
       transition: transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn i {
+      font-size: 1.1rem;
     }
 
     .btn:hover {
@@ -94,8 +102,12 @@
   <div class="container">
     <h1>Ponte'ye Hoş Geldiniz</h1>
     <div class="btn-container">
-      <a href="cafe.html" class="btn">Ponte Cafe</a>
-      <a href="otel.html" class="btn btn-otel">Ponte Otel</a>
+      <a href="cafe.html" class="btn">
+        <i class="fas fa-coffee"></i> Ponte Cafe
+      </a>
+      <a href="otel.html" class="btn btn-otel">
+        <i class="fas fa-bed"></i> Ponte Otel
+      </a>
     </div>
   </div>
 </body>
