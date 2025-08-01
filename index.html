@@ -8,9 +8,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <style>
     :root {
-      --primary: #2a5a3c;
-      --secondary: #1e3b5a;
-      --accent: #f6f1e7;
+      --primary: #2a5a3c; /* Karadeniz yeşili */
+      --secondary: #1e3b5a; /* Derin lacivert */
+      --accent: #f6f1e7; /* Krem rengi */
       --text: #333;
     }
     
@@ -24,7 +24,7 @@
       font-family: 'Montserrat', sans-serif;
       background: 
         linear-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0.1)),
-        url('https://images.unsplash.com/photo-1621451537084-482c73073a0f') center/cover no-repeat fixed;
+        url('https://images.unsplash.com/photo-1621451537084-482c73073a0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
       min-height: 100vh;
       display: flex;
       align-items: center;
@@ -32,17 +32,31 @@
       color: var(--text);
       text-align: center;
       padding: 20px;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(1px);
+      position: relative;
+    }
+
+    /* Arka plan overlay efekti */
+    body::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(42, 90, 60, 0.15); /* Yeşil tonunda hafif filtre */
+      z-index: -1;
     }
 
     .container {
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.92);
       border-radius: 24px;
       padding: 60px 40px;
       width: 100%;
       max-width: 800px;
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(4px);
     }
 
     h1 {
@@ -52,6 +66,7 @@
       color: var(--primary);
       position: relative;
       display: inline-block;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
 
     h1::after {
@@ -88,6 +103,13 @@
       overflow: hidden;
       border: none;
       letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn i {
+      font-size: 1.3rem;
     }
 
     .btn::before {
@@ -118,10 +140,9 @@
       background: var(--secondary);
     }
 
-    .logo {
-      width: 120px;
-      margin-bottom: 30px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+    /* Font Awesome ikonları için */
+    .fas {
+      font-size: 1.2rem;
     }
 
     @media (max-width: 768px) {
@@ -131,38 +152,74 @@
       
       .container {
         padding: 40px 20px;
+        backdrop-filter: blur(2px);
       }
       
       .btn {
-        padding: 15px 30px;
+        padding: 15px 25px;
         font-size: 1rem;
       }
     }
 
-    /* Mikro etkileşimler */
-    .btn:active {
-      transform: scale(0.95);
+    /* Yaprak animasyonu */
+    .leaf {
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      z-index: -1;
+      opacity: 0.7;
+      animation: falling 15s linear infinite;
     }
 
-    /* Animasyonlar */
-    .animate-delay-1 {
-      animation-delay: 0.2s;
-    }
-    .animate-delay-2 {
-      animation-delay: 0.4s;
+    @keyframes falling {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+      }
     }
   </style>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 </head>
 <body>
+  <!-- Yaprak animasyon elemanları -->
+  <div class="leaf" style="left: 10%; width: 30px; height: 30px; background-image: url('https://www.svgrepo.com/show/53083/leaf.svg'); animation-delay: 0s;"></div>
+  <div class="leaf" style="left: 25%; width: 25px; height: 25px; background-image: url('https://www.svgrepo.com/show/53083/leaf.svg'); animation-delay: 3s;"></div>
+  <div class="leaf" style="left: 70%; width: 35px; height: 35px; background-image: url('https://www.svgrepo.com/show/53083/leaf.svg'); animation-delay: 5s;"></div>
+  <div class="leaf" style="left: 85%; width: 20px; height: 20px; background-image: url('https://www.svgrepo.com/show/53083/leaf.svg'); animation-delay: 7s;"></div>
+
   <div class="container animate__animated animate__fadeIn">
-    <!-- Logo eklemek isterseniz -->
-    <!-- <img src="logo.png" alt="Ponte Logo" class="logo"> -->
-    
     <h1 class="animate__animated animate__fadeInDown">Ponte'ye Hoş Geldiniz</h1>
     <div class="btn-container">
-      <a href="cafe.html" class="btn btn-cafe animate__animated animate__fadeInUp animate-delay-1">Ponte Cafe</a>
-      <a href="otel.html" class="btn btn-otel animate__animated animate__fadeInUp animate-delay-2">Ponte Otel</a>
+      <a href="cafe.html" class="btn btn-cafe animate__animated animate__fadeInUp animate-delay-1">
+        <i class="fas fa-coffee"></i> Ponte Cafe
+      </a>
+      <a href="otel.html" class="btn btn-otel animate__animated animate__fadeInUp animate-delay-2">
+        <i class="fas fa-bed"></i> Ponte Otel
+      </a>
     </div>
   </div>
+
+  <script>
+    // Rastgele yaprak oluşturma
+    function createLeaves() {
+      const container = document.body;
+      for (let i = 0; i < 8; i++) {
+        const leaf = document.createElement('div');
+        leaf.className = 'leaf';
+        leaf.style.left = Math.random() * 100 + '%';
+        leaf.style.width = (Math.random() * 20 + 15) + 'px';
+        leaf.style.height = leaf.style.width;
+        leaf.style.backgroundImage = 'url(https://www.svgrepo.com/show/53083/leaf.svg)';
+        leaf.style.animationDelay = Math.random() * 10 + 's';
+        leaf.style.animationDuration = (Math.random() * 10 + 10) + 's';
+        container.appendChild(leaf);
+      }
+    }
+    
+    createLeaves();
+  </script>
 </body>
 </html>
