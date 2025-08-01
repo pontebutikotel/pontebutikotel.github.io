@@ -14,24 +14,28 @@
 
     body {
       font-family: 'Montserrat', sans-serif;
-      background: linear-gradient(135deg, #e8e6e1, #dcdcdc);
+      background: linear-gradient(135deg, #ff6ec4, #7873f5, #ffa751);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
       height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
-      color: #333;
+      color: white;
+      text-align: center;
     }
 
-    .content {
-      text-align: center;
-      z-index: 1;
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
       font-size: 48px;
       margin-bottom: 40px;
       font-weight: 600;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
     }
 
     .btn-container {
@@ -46,16 +50,19 @@
       font-size: 20px;
       border: none;
       border-radius: 12px;
-      background: linear-gradient(135deg, #7f7fd5, #86a8e7);
-      color: white;
+      background: white;
+      color: #ff4e8b;
+      font-weight: bold;
       text-decoration: none;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .btn:hover {
+      background-color: #ff4e8b;
+      color: white;
       transform: translateY(-5px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
     }
 
     @media (max-width: 600px) {
@@ -71,7 +78,7 @@
   </style>
 </head>
 <body>
-  <div class="content">
+  <div>
     <h1>Ponte'ye Hoş Geldiniz</h1>
     <div class="btn-container">
       <a href="cafe.html" class="btn">Ponte Cafe</a>
