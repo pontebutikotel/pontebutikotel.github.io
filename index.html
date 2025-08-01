@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Ponte Giriş</title>
-
-  <!-- Yazı Tipleri -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
+  <!-- Yeni fontlar eklendi -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
     * {
       margin: 0;
@@ -38,8 +36,9 @@
       font-family: 'Playfair Display', serif;
       font-size: 48px;
       margin-bottom: 40px;
-      font-weight: 600;
+      font-weight: 700; /* Playfair'ın bold versiyonu */
       text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+      letter-spacing: 1px;
     }
 
     .btn-container {
@@ -56,10 +55,11 @@
       border-radius: 12px;
       background: white;
       color: #ff4e8b;
-      font-weight: bold;
+      font-weight: 600;
       text-decoration: none;
       transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      font-family: 'Poppins', sans-serif;
     }
 
     .btn:hover {
@@ -81,3 +81,13 @@
     }
   </style>
 </head>
+<body>
+  <div>
+    <h1>Ponte'ye Hoş Geldiniz</h1>
+    <div class="btn-container">
+      <a href="cafe.html" class="btn">Ponte Cafe</a>
+      <a href="otel.html" class="btn">Ponte Otel</a>
+    </div>
+  </div>
+</body>
+</html>
