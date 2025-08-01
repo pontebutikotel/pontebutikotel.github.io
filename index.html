@@ -4,35 +4,93 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ponte Giriş</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Montserrat', sans-serif;
+      background-image: url('https://images.unsplash.com/photo-1604147706288-ae3807b4aa1b'); /* Otel temalı görsel */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
       text-align: center;
-      padding-top: 100px;
-      background-color: #f4f4f4;
+      color: white;
     }
+
     h1 {
+      font-size: 48px;
       margin-bottom: 40px;
+      font-weight: 600;
     }
-    .button {
-      display: inline-block;
-      margin: 20px;
+
+    .btn-container {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
       padding: 20px 40px;
       font-size: 20px;
-      background-color: #0077cc;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
       color: white;
       text-decoration: none;
-      border-radius: 10px;
-      transition: background-color 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
-    .button:hover {
-      background-color: #005fa3;
+
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 32px;
+      }
+
+      .btn {
+        font-size: 18px;
+        padding: 16px 30px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Hoş Geldiniz</h1>
-  <a href="cafe.html" class="button">Ponte Cafe</a>
-  <a href="otel.html" class="button">Ponte Otel</a>
+  <div class="overlay"></div>
+  <div class="content">
+    <h1>Ponte'ye Hoş Geldiniz</h1>
+    <div class="btn-container">
+      <a href="cafe.html" class="btn">Ponte Cafe</a>
+      <a href="otel.html" class="btn">Ponte Otel</a>
+    </div>
+  </div>
 </body>
 </html>
