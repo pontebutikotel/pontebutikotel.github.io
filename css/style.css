@@ -1,197 +1,265 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
+
+*{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     text-decoration: none;
-    border: none;
+    border:none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins',sans-serif;
 }
+:root{
+    --bg-color:#ffffff;
+    --second-bg-color:#5f2222;
+    --text-color:#ededed;
+    --main-color:#997c45;
 
-:root {
-    --bg-color: #ffffff;
-    --second-bg-color: #5f2222;
-    --text-color: #ededed;
-    --main-color: #997c45;
 }
+html{
+    font-size:62.5%;
 
-html {
-    font-size: 62.5%;
     overflow-x: hidden;
 }
 
-body {
+body{
     background: var(--bg-color);
     color: var(--text-color);
-    margin-top: 60px;
+    margin-top: 60px; /* .header yüksekliği ile aynı olmalı */
 }
 
 .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: white;
+    position: fixed;       /* Sayfada sabit tutar */
+    top: 0;                /* Yukarıya yapıştırır */
+    left: 0;               /* Sola yaslar */
+    width: 100%;           /* Tam genişlik */
+    z-index: 1000;         /* Üstte görünmesini sağlar */
+    background-color: white; /* Arka plan (şeffaf olursa alt içerik görünür) */
     padding: 1.5rem 2rem;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Hafif gölge */
 }
 
-.logo {
+
+.logo{
     position: relative;
     font-size: 2.5rem;
-    color: #222;
+    color: var(--text-color);
     font-weight: 600;
+    color: #222;
+    font-size: 2rem;
+    text-decoration: none;
     margin-left: 24px;
     font-weight: bold;
 }
 
-section {
+.navbar{
+    position: relative;
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: var(--main-color);
+}
+
+
+
+section{
     min-height: 100vh;
     padding: 10rem 9% 2rem;
 }
 
-/* Card Section */
-.card {
+/*card*/
+
+.card{
     background: var(--second-bg-color);
-    padding: 5rem 0;
+
 }
 
-.card h2 {
+.card h2{
     margin-bottom: 4rem;
-    text-align: center;
-    font-size: 3.5rem;
-    color: var(--main-color);
+
+
+
 }
 
-.card-container {
+.card-container{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    align-items: stretch;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
     gap: 2.5rem;
-    padding: 0 5%;
+
 }
 
-.card-box {
-    background: rgba(255, 255, 255, 0.1);
+.card-container .card-box{
+    position: relative;
     border-radius: 2rem;
-    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.5s ease;
+    box-shadow: 0 0 1rem var(--bg-color);
+    overflow: hidden;    
+    width: 100%; /* Kartın genişliği ayarlandı */
+    height: 20rem; /* Yüksekliği resme göre otomatik olarak ayarlanacak */
+
 }
 
-.card-box:hover {
-    transform: translateY(-10px);
-}
-
-.image-container {
-    height: 25rem;
-    overflow: hidden;
-}
-
-.image-container img {
-    width: 100%;
-    height: 100%;
+.card-box img{
+    width: 100%; 
+    height: 20rem; 
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.5s ease; 
 }
 
-.card-box:hover .image-container img {
+.card-box:hover img{
     transform: scale(1.1);
+
 }
 
-.content {
-    padding: 2rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
+/*Denemelik*/
+/* Sol alt köşedeki yazıyı sabitler, her zaman görünür */
+.card-box h4.bottom-left {
+    position: absolute;  /* Konumu sabitler */
+    bottom: 1rem;        /* Alt kenardan uzaklık */
+    left: 1rem;          /* Sol kenardan uzaklık */
+    font-size: 1.5rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* Şeffaf bir arka plan */
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    z-index: 2;          /* Diğer elementlerin üstünde olmasını sağlar */
 }
 
-.content h4 {
-    font-size: 2rem;
-    color: var(--main-color);
-    margin-bottom: 1rem;
+/* Kart hover edildiğinde sol alttaki yazıyı gizler */
+.card-box:hover .bottom-left {
+    display: none;
 }
 
-.content p {
-    font-size: 1.4rem;
-    color: var(--text-color);
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-    word-wrap: break-word;
-    white-space: normal;
+/* Ortadaki yazı sadece hover sırasında görünür */
+.card-layer h4 {
+    font-size: 3rem;
+    color: white;
+    display: none; /* Varsayılan olarak gizli */
 }
 
-.content span {
-    font-size: 1.8rem;
-    color: var(--main-color);
-    font-weight: 700;
-    margin-top: auto;
+
+/*Denemelik bitiş*/
+.card-box a {
+    text-decoration: none;
+    color: white;   
+    position: relative;     /* İçindeki öğelerin yerleşimi için */
+    display: block;         /* A etiketi tam alanı kaplayacak */
 }
 
-/* Responsive Design */
+.card-box a:hover h4 {
+    color: #ffffff;
+
+
+
+
+
+}
+
+/* Mobil cihazlar (max-width: 768px) */
 @media (max-width: 768px) {
     .card-container {
-        grid-template-columns: 1fr;
-        padding: 0 3%;
+        grid-template-columns: 1fr; /* Mobilde tek sütun */
+        gap: 1.5rem;
     }
 
     .header {
-        padding: 1rem 5%;
-    }
-
-    section {
-        padding: 8rem 3% 2rem;
-    }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-    .card-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-/* Hamburger Menu */
-#menu-icon {
-    display: none;
-    font-size: 3.6rem;
-    cursor: pointer;
-    color: #222;
-}
-
-@media (max-width: 600px) {
-    #menu-icon {
-        display: block;
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
-    }
-
-    .navbar {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 1rem 0;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
-
-    .navbar.active {
-        display: flex;
-        flex-direction: column;
+        padding: 2rem 5%;
     }
 
     .navbar a {
-        color: #222;
-        padding: 1rem 2rem;
-        text-align: center;
+        font-size: 1.4rem;
+    }   
+}
+
+/* Tabletler (min-width: 768px ve max-width: 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr); /* Tabletlerde iki sütun */
+        gap: 2rem;
+    }
+
+    .header {
+        padding: 2rem 7%;
+    }
+
+    .navbar a {
         font-size: 1.6rem;
+    }
+    
+}
+
+/* Laptoplar ve masaüstü cihazlar (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .card-container {
+        grid-template-columns: repeat(3, 1fr); /* Masaüstünde üç sütun */
+        gap: 2.5rem;
+    }
+
+    .header {
+        padding: 2rem 9%;
+    }
+
+    .navbar a {
+        font-size: 1.7rem;
+    }
+   
+}
+
+/* Hamburger ikonu başlangıçta gizli */
+#menu-icon {
+    display: none;    
+    font-size: 3.6rem;
+    cursor: pointer;
+
+}
+
+/* Ekran genişliği 600px ve altına düştüğünde */
+@media (max-width: 600px) {
+    .navbar {
+        display: none; /* Menü gizlenir */
+        flex-direction: column; /* Açılınca dikey görünsün */
+    }
+    
+    #menu-icon {
+        display: block; /* Hamburger ikonu göster */
+
+
+
+    }
+    
+    .navbar.active {
+        display: flex; /* İkon tıklanınca menü görünür hale gelir */
+        position: absolute;
+        top: 100%; /* Üst menünün hemen altına gelir */
+        left: 0;
+        background-color: white;
+        width: 100%;
+
+        padding: 1rem 0;
+
+
+
+
+
+
+    }
+
+    .navbar a {
+        padding: 1rem;
+
+        text-align: center;
+        width: 100%;
+        color: #000;
     }
 }
