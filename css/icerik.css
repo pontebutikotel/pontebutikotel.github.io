@@ -115,11 +115,9 @@ section {
 
 .content {
     display: flex;
-    justify-content: space-between; /* Sol kısım ve fiyat arası boşluk */
-    align-items: flex-start;
-    width: 100%;
-    flex-direction: column; /* Başlık ve açıklamayı alt alta koy */
-    gap: 1rem; /* Sol ve sağ kısım arası boşluk */
+    flex-direction: column; /* Başlık, açıklama, fiyat alt alta */
+    align-items: flex-start; /* Yazılar sola hizalı */
+    gap: 0.5rem; /* Aralarındaki boşluk */
 }
 
 .content h4 {    
