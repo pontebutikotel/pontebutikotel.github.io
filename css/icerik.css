@@ -124,22 +124,20 @@ section {
 
 .content h4 {    
     font-size: 2rem;
-    margin-bottom: 0.3rem; /* Başlık ile açıklama arası boşluk */
     color: white;
 }
 
 .content p {    
+    position:absolute;
+    display: block;
     font-size: 1.4rem;
-    line-height: 1.4; /* Satır aralığı */
     color: white;
-    margin: 0;
-    word-wrap: break-word; /* Uzun kelimeler taşmasın */
+    margin: 7rem 5rem 0 0;
 }
 
 .content span {
     font-size: 2rem;
     color: white;
-    white-space: nowrap; /* Fiyat tek satırda kalsın */
 }
 
 .chocolate-info {
