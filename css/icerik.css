@@ -116,7 +116,7 @@ section {
 .content {
     display: flex;
     justify-content: space-between; /* Sol kısım ve fiyat arası boşluk */
-    align-items: center;
+    align-items: flex-start;
     width: 100%;
     flex-direction: column; /* Başlık ve açıklamayı alt alta koy */
     gap: 1rem; /* Sol ve sağ kısım arası boşluk */
@@ -128,11 +128,10 @@ section {
 }
 
 .content p {    
-    position:absolute;
-    display: block;
     font-size: 1.4rem;
     color: white;
-    margin: 7rem 5rem 0 0;
+    margin: 0; /* Varsayılan boşluklar kalkar */
+    word-wrap: break-word; /* Uzun kelimeleri bile kırar */
 }
 
 .content span {
