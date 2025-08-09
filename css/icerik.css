@@ -115,26 +115,35 @@ section {
 
 .content {
     display: flex;
-    flex-direction: column; /* Başlık, açıklama, fiyat alt alta */
-    align-items: flex-start; /* Yazılar sola hizalı */
-    gap: 0.5rem; /* Aralarındaki boşluk */
+    justify-content: space-between; /* Sol kısım ve fiyat arası boşluk */
+    align-items: center; /* Fiyat ve sol kısım dikeyde ortalı */
+    width: 100%;
+}
+
+.text-block {
+    display: flex;
+    flex-direction: column; /* Başlık ve açıklama alt alta */
+    align-items: flex-start;
+    gap: 0.3rem;
 }
 
 .content h4 {    
     font-size: 2rem;
     color: white;
+    margin: 0;
 }
 
 .content p {    
     font-size: 1.4rem;
     color: white;
-    margin: 0; /* Varsayılan boşluklar kalkar */
-    word-wrap: break-word; /* Uzun kelimeleri bile kırar */
+    margin: 0;
+    word-wrap: break-word;
 }
 
 .content span {
     font-size: 2rem;
     color: white;
+    white-space: nowrap; /* Taşma olmasın */
 }
 
 .chocolate-info {
