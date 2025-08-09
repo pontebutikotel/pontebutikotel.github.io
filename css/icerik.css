@@ -124,7 +124,11 @@ section {
 .content-text {
     display: flex;
     flex-direction: column; /* Başlık ve açıklamayı alt alta koy */
-    flex: 1; /* Sağdaki fiyat dışında kalan tüm alanı kapla */
+    flex: 1; /* Sağdaki fiyat dışında kalan tüm alanı kapla */    
+    justify-content: space-between; /* Sol kısım ve fiyat arası boşluk */
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem; /* Sol ve sağ kısım arası boşluk */
 }
 
 .content h4 {    
